@@ -1,7 +1,7 @@
 #include "sinplot.h"
 
 SinPlot::SinPlot(QCustomPlot *parent): QPlot(parent){
-
+    mGraph->setName("Sin(x)");
 }
 
 void SinPlot::generateXY(double xmin, double xmax){

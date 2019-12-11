@@ -1,7 +1,7 @@
 #include "cosplot.h"
 
 CosPlot::CosPlot(QCustomPlot *parent): QPlot(parent){
-
+    mGraph->setName("Cos(x)");
 }
 
 void CosPlot::generateXY(double xmin, double xmax){

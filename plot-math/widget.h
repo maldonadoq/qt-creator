@@ -6,6 +6,8 @@
 #include "qcustomplot.h"
 #include "sinplot.h"
 #include "cosplot.h"
+#include "sigplot.h"
+#include "tanhplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -27,6 +29,8 @@ private:
 
     QPlot *mSinX;
     QPlot *mCosX;
+    QPlot *mSigX;
+    QPlot *mTanhX;
 
     double mMinX;
     double mMaxX;

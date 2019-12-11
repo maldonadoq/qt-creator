@@ -12,7 +12,9 @@ class QPlot
 public:
     QPlot(QCustomPlot *);
 
-    void drawGraph();
+    void setData();
+    void setPen(QPen);
+    void plot(double, double, QPen);
 
     virtual ~QPlot();
     virtual void generateXY(double, double) = 0;

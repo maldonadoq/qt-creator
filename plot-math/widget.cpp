@@ -18,16 +18,29 @@ Widget::Widget(QWidget *parent)
     mMinX = -10.0;
     mMaxX = 10.0;
 
+    // X Range
     mPlot->xAxis->setRange(mMinX, mMaxX);
     mPlot->yAxis->setRange(-2, 2);
 
+    // Y Range
+    mPlot->xAxis->setLabel("X");
+    mPlot->yAxis->setLabel("Y");
+
+    // Legend
+    mPlot->legend->setVisible(true);
+    mPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignRight);
+
     mSinX = new SinPlot(mPlot);
-    mSinX->generateXY(mMinX, mMaxX);
-    mSinX->drawGraph();
+    mSinX->plot(mMinX, mMaxX, QPen(Qt::red));
 
     mCosX = new CosPlot(mPlot);
-    mCosX->generateXY(mMinX, mMaxX);
-    mCosX->drawGraph();
+    mCosX->plot(mMinX, mMaxX, QPen(Qt::blue));
+
+    mSigX = new SigPlot(mPlot);
+    mSigX->plot(mMinX, mMaxX, QPen(Qt::green));
+
+    mTanhX = new TanhPlot(mPlot);
+    mTanhX->plot(mMinX, mMaxX, QPen(Qt::yellow));
 }
 
 Widget::~Widget()
