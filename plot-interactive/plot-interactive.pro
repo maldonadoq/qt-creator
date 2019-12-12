@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,10 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        widget.cpp
+        widget.cpp \
+        qcustomplot.cpp \
+        qplot.cpp \
+        sinplot.cpp
 
 HEADERS += \
-        widget.h
+        widget.h \
+        qcustomplot.h \
+        qplot.h \
+        sinplot.h
 
 FORMS += \
         widget.ui
+
+#QMAKE_CXXFLAGS += -std=gnu++14
